@@ -54,18 +54,18 @@ Nesse nivel, configuramos o header para dizer o que a API pode receber e retorna
 # REST: HTTP Method Negotiation
 HTTP possui um outro método: OPTIONS. Esse método nos permite informar quais métodos são permitidos ou não em determinado recurso.
 
-**OPTIONS /api/product HTTP/1.1**
-**Host: http://localhost**
+- **OPTIONS /api/product HTTP/1.1**
+- **Host: http://localhost**
 
 Respose:
 
-**HTTP/1.1 200 OK**
-**Allow: GET, POST**
+- **HTTP/1.1 200 OK**
+- **Allow: GET, POST**
 
 Caso envie a requisicao em outro formato:
 
-**HTTP/1.1 405 Not Allowed**
-**Allow: GET, POST**
+- **HTTP/1.1 405 Not Allowed**
+- **Allow: GET, POST**
 
 # REST: Content Negotiation
 O processo de content negotiation é baseado na requisicao que o client está fazendo para o server. Nesse caso ele solicita o que e como ele quer a resposta. O server então retornará ou não a informação no formato desejado.
@@ -78,7 +78,7 @@ O processo de content negotiation é baseado na requisicao que o client está fa
 
 Resposta pode ser o retorno dos dados ou:
 
-**HTTP/1.1 406 Not Acceptable**
+- **HTTP/1.1 406 Not Acceptable**
 
 
 # REST: Content-type negotiation
@@ -86,13 +86,13 @@ Resposta pode ser o retorno dos dados ou:
 
 - Através de um content-type no header da request, o servidor consegue verificar se ele irá conseguir processar a informacao para retornar a informacao desejada.
 
-**POST /product HTTP/1.1**
-**Accept: application/json**
-**Content-Type: application/json
+- **POST /product HTTP/1.1**
+- **Accept: application/json**
+- **Content-Type: application/json**
 
-**{**
-    **"name": "product"**
-**}**
+- **{**
+-    **"name": "product"**
+- **}**
 
 Caso o servidor nao aceite o content type, ele poderá retornar:
 
